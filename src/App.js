@@ -41,13 +41,25 @@ class App extends Component {
     
   }
 
+  // removeAnimalHandler = (inputObj) => {
+  //   axios({
+  //     method: 'DELETE',
+  //     url: BASE_URL +'/api/animals',
+  //     data: { name: inputObj.name,
+  //             imgUrl: inputObj.imgUrl
+  //           }
+  //   }).then(response => {
+  //     this.setState({animalList: response.data})
+  //   })
+  // }
+
  
 
   render() {
     return (
       <div className="App">   
       <div>
-        <AddAnimal add={this.addAnimalHandler}/>
+        <AddAnimal add={this.addAnimalHandler} />
       </div>  
       <div>
         <AnimalList animals={this.state.animalList}/>
