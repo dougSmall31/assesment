@@ -25,6 +25,17 @@ let animalArr = [
       console.log('get request')   
   })
 
+  app.post('/api/animals', (req, res) => {
+      animalArr.push(req.body)
+      res.send(animalArr)
+      console.log(req.body)
+  })
+
+//   app.delete('/api/animals', (req, res) => {
+//       animalArr.pop()
+//       res.send(animalArr)
+//   })
+
   app.listen(4000, () => {
       console.log('listening on port 4000')
   })

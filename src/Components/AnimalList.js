@@ -7,10 +7,12 @@ const AnimalList = (props) => {
             <div>
             <h2>Animals</h2>
             </div>
-            {props.animals.map(animal =>(
+            {props.animals.map(animal =>(//add key?
             <div>    
                 <div>Name: {animal.name}</div>
-                <img src={animal.imageURL} alt='' />
+                <div>{animal.id}</div>
+                <img className='images' src={animal.imageUrl} alt='' />
+                
             </div>
             ))}
         </div>
