@@ -27,11 +27,12 @@ class App extends Component {
   }
 
   addAnimalHandler = (inputObj) => {
+    console.log('this is inputObj', inputObj)
     axios({
       method: 'POST',
       url: BASE_URL +'/api/animals',
-      data: { name1: inputObj.nameInput,
-              imgUrl1: inputObj.imgInput
+      data: { name: inputObj.name,
+              imgUrl: inputObj.imgUrl
             }
     }).then(response => {
       this.setState({animalList: response.data})
@@ -40,7 +41,7 @@ class App extends Component {
     
   }
 
-  //saveHandler() update state and referenct two input fields
+ 
 
   render() {
     return (

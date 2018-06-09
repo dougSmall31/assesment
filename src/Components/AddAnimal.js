@@ -7,10 +7,9 @@ class AddAnimal extends Component {
         super()
 
         this.state = {
-            animalInput: {
-                nameInput: '',
-                imgInput : ''
-            } 
+            nameInput: '',
+            imgInput: '',
+
         }
     }
 
@@ -28,11 +27,16 @@ class AddAnimal extends Component {
     }
 
     handleAdd = (event)=> {
-        this.props.add(this.state.animalInput)
-        this.setState({animalInput:{nameInput:'',imgInput:''}})
-        console.log(this.state.animalInput,'handleAdd');
+        this.props.add({ 
+            name:this.state.nameInput,
+            imgUrl:this.state.imgInput
+        })
+       
+      
             
     }
+
+    
     
     // handleRemove = (event) => {
     //     this.props.handleRemove(this.state.animalInput)
@@ -43,11 +47,11 @@ class AddAnimal extends Component {
             <div className='addAnimal'>
             <div>
                 <div>
-                    <input name={this.state.animalInput.nameInput}
+                    <input name={this.state.nameInput}
                             placeholder="Animal Name"
                             onChange={ (e) =>this.handleNameChange( e.target.value )}
                     />
-                    <input img={this.state.animalInput.imgInput}
+                    <input img={this.state.imgInput}
                             placeholder="Image URL"
                             onChange={ (e) =>this.handleImgChange( e.target.value )}
                     />

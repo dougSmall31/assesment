@@ -27,6 +27,7 @@ let animalArr = [
 
   app.post('/api/animals', (req, res) => {
       animalArr.push(req.body)
+      console.log('animalArr', animalArr)
       res.send(animalArr)
       console.log(req.body)
   })
